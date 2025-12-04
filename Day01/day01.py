@@ -1,5 +1,7 @@
 from math import floor
+from AoC_util.AoC_loader import AoC_loader
 
+### Functions
 class dial:
     def __init__(self, size=100, position=0):
         self.size = size
@@ -41,9 +43,7 @@ my_dial = dial(position=50)
 
 
 ### Part 1 & 2
-with open(r'Day01\input01.txt') as f:
-    for line in f:
-        my_dial.turn_dial(line[0], int(line[1::]))
-        print(f'turn {line[0]} to {my_dial.get_position()}, passes: {my_dial.get_zero_pass()}')
-    print(f'Part 1: {my_dial.get_zero_stops()}')
-    print(f'Part 2: {my_dial.get_all_zeros()}')
+for line in AoC_loader(day=1, part='input').get_lines():
+    my_dial.turn_dial(line[0], int(line[1::]))
+print(f'Part 1: {my_dial.get_zero_stops()}')
+print(f'Part 2: {my_dial.get_all_zeros()}')

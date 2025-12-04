@@ -1,13 +1,13 @@
 from AoC_util.AoC_loader import AoC_loader
 
-###
+### Functions
 def max_jolts(bank: str, batteries: int):
     digs = [int(i) for i in bank]
     res_string = ''
     for dig in range(batteries):
         tmp = digs[0:-(batteries-dig-1)]
         if len(tmp) == 0:
-            res_string += str(max(rem_digs))
+            res_string += str(max(digs))
             break
         rem_digs = digs[-(batteries-dig-1):]
         next_dig = max(tmp)
@@ -16,8 +16,7 @@ def max_jolts(bank: str, batteries: int):
     return int(res_string)
 
 ### Read input
-with open(r'Day03\sample03.txt') as f:
-    banks = [line.strip() for line in f]
+banks = AoC_loader(day=3, part='input').get_lines()
 
 ### Part 1
 jolts = []

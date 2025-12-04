@@ -3,3 +3,6 @@
 
 # Ignore input files of the days
 */*.txt
+
+# Ignore session cookie for AoC_loader
+session_cookie.txt
